@@ -198,7 +198,9 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint . && prettier-eslint --list-different **/*.js",
+    "format": "prettier-eslint --write **/*.js"
   },
   "author": "",
   "license": "ISC"
