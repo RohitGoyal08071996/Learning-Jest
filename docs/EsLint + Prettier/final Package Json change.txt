@@ -1,0 +1,13 @@
+Add to scripts:
+
+"scripts" :{
+...
+    "lint": "eslint . && prettier-eslint --list-different **/*.js",
+    "format": "prettier-eslint --write **/*.js",
+...
+}
+
+
+Then you can run:
+
+npm run format

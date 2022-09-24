@@ -1,0 +1,56 @@
+===================================================
+Install Prettier-Eslint:
+npm install --save-dev prettier-eslint-cli
+
+Run:
+npx prettier-eslint <file name>
+===================================================
+
+===================================================
+To configure such that prettier only accepts single quotes, and in case of escapse accept double quotes:
+Add below to eslintrc.js
+
+// .eslintrc.js
+module.exports = {
+  ...
+  rules: {
+    quotes: ['error', 'single', { avoidEscape: true }],
+  },
+};
+
+To configure comma dangle (Trailling comma)
+rules: {
+    'comma-dangle': ['error', 'always-multiline'], 
+  },
+
+
+Final .eslintrc.js
+module.exports = {
+  extends: ['eslint:recommended'], 
+  parserOptions: {
+    ecmaVersion: 6,
+  },
+  env: {
+    node: true, 
+  },
+  rules: {
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'comma-dangle': ['error', 'always-multiline'], 
+  },
+};
+===================================================
+
+===================================================
+Step 1:
+Go to extension, install Prettier-Eslint
+
+Step 2:
+On windows: CTRL + SHIFT + P. User settings.
+Add:
+"prettier.eslintIntegration": true,
+
+Step 3:
+On windows: CTRL + SHIFT + P. Worksace settings.
+Add:
+"editor.formatOnSave": true
+===================================================
