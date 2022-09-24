@@ -1,0 +1,95 @@
+==================================================
+To install:
+npm install --save-dev eslint
+==================================================
+
+==================================================
+Create a new file: .eslintrc.js
+
+// .eslintrc.js
+module.exports = {
+  extends: ['eslint:recommended'],
+};
+==================================================
+
+==================================================
+To run: npx eslint <file name>
+==================================================
+
+==================================================
+Default: ECMAScript 5 standard. 
+
+To change to ECMAScipt 6:
+// .eslintrc.js
+module.exports = {
+  extends: ['eslint:recommended'],
+  parserOptions: {
+    ecmaVersion: 6,
+  },
+};
+==================================================
+
+==================================================
+To let ESLint know, code will run in Node environment: add
+
+// .eslintrc.js
+...
+env: {
+    node: true,
+  },
+
+...
+==================================================
+
+==================================================
+Final:
+// .eslintrc.js
+module.exports = {
+  extends: ['eslint:recommended'],
+  parserOptions: {
+    ecmaVersion: 6,
+  },
+  env: {
+    node: true,
+  },
+};
+==================================================
+
+==================================================
+Above will work for normal js file, but not for JEST test js files. 
+
+To fix:
+npm install --save-dev eslint-plugin-jest
+
+Add:
+
+// .eslintrc.js
+...
+extends: ['eslint:recommended', 'plugin:jest/recommended'],
+...
+
+Now JEST test will run, but now it applies to every file.
+
+Instead create a new folder for TESTS and put a .eslintrc.js in that:
+
+// ./test/.eslintrc.js
+module.exports = {
+  plugins: ['jest'],
+  extends: ['plugin:jest/recommended'],
+};
+
+
+// .eslintrc.js
+module.exports = {
+  extends: ['eslint:recommended'],
+  parserOptions: {
+    ecmaVersion: 6,
+  },
+  env: {
+    node: true,
+  },
+  rules: {
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'comma-dangle': ['error', 'always-multiline'],
+  },
+};
