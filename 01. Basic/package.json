@@ -148,6 +148,7 @@
     "picomatch": "^2.3.1",
     "pirates": "^4.0.5",
     "pkg-dir": "^4.2.0",
+    "prettier-eslint-cli": "^7.1.0",
     "pretty-format": "^29.0.3",
     "prompts": "^2.4.2",
     "react-is": "^18.2.0",
